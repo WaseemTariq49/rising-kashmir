@@ -3,6 +3,9 @@ import '../styles/header.scss';
 import { ImHome3 } from 'react-icons/im';
 import {BsSearch} from 'react-icons/bs';
 import { Select, MenuItem } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+
+import Health from "./Health"
 
 // import {Link} from 'react-router-dom';
 
@@ -18,17 +21,21 @@ const Header = () => {
     
       <div className='container'>
         <div className='social'>
-          <a href='#' >About Us</a>|
-          <a href='#' >Our Team</a>|
-          <a href='#' >Contact Us</a>|
-          <a href='#' >E-Paper</a>
+          <Link to='#' >About Us</Link>|
+          <Link to='#' >Our Team</Link>|
+          <Link to='#' >Contact Us</Link>|
+          <Link to='#' >E-Paper</Link>
         </div>
 
         <nav>
-          <img src={require('../assets/logo.png')} ></img>
-          <ImHome3 className='h'/>
-          <a href='#'>TOP STORIES</a>
-          <a href='#'>
+          <Link to="/">
+            <img className='himg' src={require('../assets/logo.png')} ></img>
+          </Link>
+          <Link to="/">
+            <ImHome3 className='h'/>
+          </Link>
+          <Link to='/topstories'>TOP STORIES</Link>
+          <Link to='/city'>
           <Select value={2} className='select'>
             <MenuItem value={5}>May</MenuItem>
             <MenuItem value={1}>KASHMIR</MenuItem>
@@ -36,12 +43,12 @@ const Header = () => {
             <MenuItem value={3}>JAMMU</MenuItem>
             <MenuItem value={4}>POLITICS</MenuItem>
           </Select>
-          </a>
-          <a href='#'>HEALTH</a>
-          <a href='#'>ANCHOR</a>
-          <a href='#'>FEATURES</a>
-          <a href='#'>INTERVIEWS</a>
-          <a href='#'>MORE</a>
+          </Link>
+          <Link to='/health'>HEALTH</Link>
+          <Link to='/anchor'>ANCHOR</Link>
+          <Link to='/features'>FEATURES</Link>
+          <Link to='/interviews'>INTERVIEWS</Link>
+          <Link to='/more'>MORE</Link>
           <BsSearch className='s'/>
         </nav>
       </div>
